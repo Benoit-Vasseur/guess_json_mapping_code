@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Benoit-Vasseur/guess_json_mapping_code#readme",
   "devDependencies": {
-    "jest": "^24.0.0"
+    "jest": "^24.0.0",
+    "prettier": "1.16.1"
   }
 }

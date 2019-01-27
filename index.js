@@ -1,35 +1,35 @@
 function guestMapingRules(source, target, mappingRules = {}) {
   Object.entries(target).forEach(([key, value]) => {
     if (typeof value === "object") {
-      mappingRules[key] = guestMapingRules(source, value, mappingRules[key]);
+      mappingRules[key] = guestMapingRules(source, value, mappingRules[key])
     } else {
-      return (mappingRules[key] = findPath(value, source));
+      return (mappingRules[key] = findPath(value, source))
     }
-  });
-  return mappingRules;
+  })
+  return mappingRules
 }
 
 function findPath(value, source, path = "") {
-  let r = undefined;
+  let r = undefined
   Object.entries(source).forEach(([key, v]) => {
     if (typeof v === "object") {
-      r = findPath(value, v, `${path}.${key}`);
+      r = findPath(value, v, `${path}.${key}`)
     } else {
       if (value === v) {
-        r = `${path}.${key}`;
+        r = `${path}.${key}`
       }
     }
-  });
-  return r;
+  })
+  return r
 }
 
 function generateMappingCode(mappingRules) {
   return `
 target = ${mappingRules
-          .replace(new RegExp('"\\.', "g"), "source.")
-          .replace(new RegExp('",', "g"), ",")
-          .replace(/"\n/g, "\n")}
-    `;
+    .replace(new RegExp('"\\.', "g"), "source.")
+    .replace(new RegExp('",', "g"), ",")
+    .replace(/"\n/g, "\n")}
+    `
 }
 
 module.exports = {
