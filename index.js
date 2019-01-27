@@ -1,32 +1,3 @@
-const source = {
-  firstName: "Benoit",
-  p: {
-    firstName: "Benoit"
-  },
-  lastName: "Vasseur"
-};
-
-const target = {
-  personne: {
-    prenom: "Benoit",
-    nom: "Vasseur"
-  }
-};
-
-const mappingRulesEx = {
-  personne: {
-    prenom: "$SOURCE.firstName",
-    nom: "$SOURCE.lastName"
-  }
-};
-
-function MappingCode(source) {
-  target = {};
-  target.personne = {};
-  target.personne.prenom = source.firstName;
-  target.personne.nom = source.lastName;
-}
-
 function guestMapingRules(source, target, mappingRules = {}) {
   Object.entries(target).forEach(([key, value]) => {
     if (typeof value === "object") {
@@ -61,16 +32,8 @@ target = ${mappingRules
     `;
 }
 
-const mappingRules = guestMapingRules(source, target);
-
-console.log("---- SOURCE ----");
-console.log(JSON.stringify(source, null, 4));
-
-console.log("---- TARGET ----");
-console.log(JSON.stringify(target, null, 4));
-
-console.log("---- MAPPING RULES ----");
-const formatedMappingRules = JSON.stringify(mappingRules, null, 4);
-console.log(formatedMappingRules);
-
-console.log(generateMappingCode(formatedMappingRules));
+module.exports = {
+  guestMapingRules,
+  findPath,
+  generateMappingCode
+}

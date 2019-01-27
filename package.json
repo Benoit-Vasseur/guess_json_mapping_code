@@ -1,0 +1,22 @@
+{
+  "name": "guess_json_mapping_code",
+  "version": "0.0.1",
+  "description": "library is to produce (groovy) code to map two JSON (source -> target).",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benoit-Vasseur/guess_json_mapping_code.git"
+  },
+  "author": "Benoit Vasseur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Benoit-Vasseur/guess_json_mapping_code/issues"
+  },
+  "homepage": "https://github.com/Benoit-Vasseur/guess_json_mapping_code#readme",
+  "devDependencies": {
+    "jest": "^24.0.0"
+  }
+}
