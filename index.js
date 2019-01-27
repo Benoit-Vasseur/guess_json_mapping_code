@@ -10,7 +10,7 @@ function guestMapingRules(source, target, mappingRules = {}) {
 }
 
 function findPath(value, source, path = "") {
-  let r = undefined
+  let r
   Object.entries(source).forEach(([key, v]) => {
     if (typeof v === "object") {
       r = findPath(value, v, `${path}.${key}`)

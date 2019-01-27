@@ -30,3 +30,12 @@ The items order in sublists are not meaningful.
     - [] multiple matches
     - [] date format conversion
 - [] open for extension to support other languages
+
+## workflow and contribution
+
+- A specifiq workflow should not be forced during coding.
+- Rules are here only when a merge request is made -> so we do not merge if a test is red or the coding style is not respected.
+
+I do not want to borrow the potential contributor during his dev process. So I do not want to force to use prettier and eslint during coding. The rules are enforce only when we do merge request to master (on travis).
+So if the dev want to use prttier and eslint during his coding process, the toosl are here (npm scripts and config files).
+And when the contribution is finished and the merge request is made, only here travis will complain if the formatting is not correct.

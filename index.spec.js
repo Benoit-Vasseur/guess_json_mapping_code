@@ -1,4 +1,4 @@
-const { guestMapingRules } = require("./index");
+const { guestMapingRules } = require("./index")
 
 describe("guestMapingRules", () => {
   test("simple json", () => {
@@ -7,22 +7,22 @@ describe("guestMapingRules", () => {
         firstName: "Benoit"
       },
       lastName: "Vasseur"
-    };
+    }
 
     const target = {
-        personne: {
-          prenom: "Benoit",
-          nom: "Vasseur"
-        }
-      };
+      personne: {
+        prenom: "Benoit",
+        nom: "Vasseur"
+      }
+    }
 
     const mappingRules = guestMapingRules(source, target)
 
     expect(mappingRules).toEqual({
-        personne: {
-            prenom: ".p.firstName",
-            nom: ".lastName"
-        }
+      personne: {
+        prenom: ".p.firstName",
+        nom: ".lastName"
+      }
     })
-  });
-});
+  })
+})
