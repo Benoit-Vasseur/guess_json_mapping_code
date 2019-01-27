@@ -33,9 +33,19 @@ The items order in sublists are not meaningful.
 
 ## workflow and contribution
 
-- A specifiq workflow should not be forced during coding.
-- Rules are here only when a merge request is made -> so we do not merge if a test is red or the coding style is not respected.
+### Tools
 
-I do not want to borrow the potential contributor during his dev process. So I do not want to force to use prettier and eslint during coding. The rules are enforce only when we do merge request to master (on travis).
-So if the dev want to use prttier and eslint during his coding process, the toosl are here (npm scripts and config files).
-And when the contribution is finished and the merge request is made, only here travis will complain if the formatting is not correct.
+Tools used to have style consistency (and try to check some best practises) :
+- prettier : `npm run format`
+- eslint : `npm run lint`
+
+### Spirit
+
+- No specific workflow should be forced during coding on local (no git hooks, etc).
+- Travis will complain if : tests or linting rules are failing
+- If a branch/PR is red, it is not merged into master
+- feature branch
+
+I do not want to borrow the potential contributor during his dev process. So I do not want to force other to use prettier and eslint during local coding. Travis will complain if the rules are broken, and I think it is enough.
+So if the dev want to use prettier and eslint during his coding process, the tools are here (npm scripts and config files).
+So it is just only before the PR that prettier and eslint have to be green (if you want a merge).
