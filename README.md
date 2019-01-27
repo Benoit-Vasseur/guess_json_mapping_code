@@ -1,5 +1,7 @@
 # GUESS JSON MAPPING CODE
 
+[![Build Status](https://travis-ci.com/Benoit-Vasseur/guess_json_mapping_code.svg?branch=master)](https://travis-ci.com/Benoit-Vasseur/guess_json_mapping_code)
+
 ## GOAL
 
 The goal of this library is to produce (groovy) code to map two JSON (source -> target).
