@@ -7,7 +7,7 @@ function guestMapingRules(source, target, mappingRules = {}) {
     }
   })
   return mappingRules
-}
+};
 
 function findPath(value, source, path = "") {
   let r
