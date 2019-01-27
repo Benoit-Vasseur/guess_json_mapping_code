@@ -1,7 +1,7 @@
-function guestMapingRules(source, target, mappingRules = {}) {
+function guessMapingRules(source, target, mappingRules = {}) {
   Object.entries(target).forEach(([key, value]) => {
     if (typeof value === "object") {
-      mappingRules[key] = guestMapingRules(source, value, mappingRules[key])
+      mappingRules[key] = guessMapingRules(source, value, mappingRules[key])
     } else {
       return (mappingRules[key] = findPath(value, source))
     }
@@ -33,7 +33,7 @@ target = ${mappingRules
 }
 
 module.exports = {
-  guestMapingRules,
+  guessMapingRules,
   findPath,
   generateMappingCode
 }

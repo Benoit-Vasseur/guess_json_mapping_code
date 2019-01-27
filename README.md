@@ -11,11 +11,11 @@ The items order in sublists are not meaningful.
 
 - [x] simple json mapping : no array, strict equal (no substring), ...
 - [x] add tests
-    - [x] guestMapingRules()
+    - [x] guessMapingRules()
     - [] findPath()
     - [] generateMappingCode()
-- [-] add CD/CI
-- [] add linter and prettier
+- [x] add CD/CI
+- [x] add linter and prettier
 - [] be sure to have a nice workflow and good tools for publishing, testing and documentation
 - [] add UI
     - [] simple version : no linter for json, no code formatting, etc

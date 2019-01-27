@@ -1,4 +1,4 @@
-const { guestMapingRules, generateMappingCode } = require("./index")
+const { guessMapingRules, generateMappingCode } = require("./index")
 
 const source = {
   firstName: "Benoit",
@@ -22,7 +22,7 @@ console.log("---- TARGET ----")
 console.log(JSON.stringify(target, null, 4))
 
 console.log("---- MAPPING RULES ----")
-const mappingRules = guestMapingRules(source, target)
+const mappingRules = guessMapingRules(source, target)
 const formatedMappingRules = JSON.stringify(mappingRules, null, 4)
 console.log(formatedMappingRules)
 

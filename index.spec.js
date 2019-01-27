@@ -1,4 +1,4 @@
-const { guestMapingRules } = require("./index")
+const { guessMapingRules } = require("./index")
 
 describe("guestMapingRules", () => {
   test("simple json", () => {
@@ -16,7 +16,7 @@ describe("guestMapingRules", () => {
       }
     }
 
-    const mappingRules = guestMapingRules(source, target)
+    const mappingRules = guessMapingRules(source, target)
 
     expect(mappingRules).toEqual({
       personne: {
