@@ -10,11 +10,11 @@ The strating points are the source and the target JSON and want to get the code 
 The items order in sublists are not meaningful.
 
 - [x] simple json mapping : no array, strict equal (no substring), ...
-- [] add tests
-    - [] guestMapingRules()
+- [x] add tests
+    - [x] guestMapingRules()
     - [] findPath()
     - [] generateMappingCode()
-- [] add CD/CI
+- [-] add CD/CI
 - [] add linter and prettier
 - [] be sure to have a nice workflow and good tools for publishing, testing and documentation
 - [] add UI
