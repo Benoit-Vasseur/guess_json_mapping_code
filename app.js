@@ -1,4 +1,4 @@
-const { guestMapingRules, generateMappingCode } = require("./index");
+const { guessMapingRules, generateMappingCode } = require("./index")
 
 const source = {
   firstName: "Benoit",
@@ -6,27 +6,27 @@ const source = {
     firstName: "Benoit"
   },
   lastName: "Vasseur"
-};
+}
 
 const target = {
   personne: {
     prenom: "Benoit",
     nom: "Vasseur"
   }
-};
+}
 
-console.log("---- SOURCE ----");
-console.log(JSON.stringify(source, null, 4));
+console.log("---- SOURCE ----")
+console.log(JSON.stringify(source, null, 4))
 
-console.log("---- TARGET ----");
-console.log(JSON.stringify(target, null, 4));
+console.log("---- TARGET ----")
+console.log(JSON.stringify(target, null, 4))
 
-console.log("---- MAPPING RULES ----");
-const mappingRules = guestMapingRules(source, target);
-const formatedMappingRules = JSON.stringify(mappingRules, null, 4);
-console.log(formatedMappingRules);
+console.log("---- MAPPING RULES ----")
+const mappingRules = guessMapingRules(source, target)
+const formatedMappingRules = JSON.stringify(mappingRules, null, 4)
+console.log(formatedMappingRules)
 
-console.log(generateMappingCode(formatedMappingRules));
+console.log(generateMappingCode(formatedMappingRules))
 
 /*
 

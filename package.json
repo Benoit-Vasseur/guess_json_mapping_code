@@ -1,15 +1,22 @@
 {
-  "name": "guess_json_mapping_code",
+  "name": "@bvasseur/guess_json_mapping_code",
   "version": "0.0.1",
-  "description": "library is to produce (groovy) code to map two JSON (source -> target).",
+  "description": "library to produce (groovy) code that map two JSON (source -> target).",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint *.js",
+    "format": "prettier --write *.js",
+    "preversion": "npm run format && npm run lint && npm run test",
+    "mypublish": "git push && git push --tags && npm publish --access public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Benoit-Vasseur/guess_json_mapping_code.git"
   },
+  "files": [
+    "index.js"
+  ],
   "author": "Benoit Vasseur",
   "license": "MIT",
   "bugs": {
@@ -17,6 +24,15 @@
   },
   "homepage": "https://github.com/Benoit-Vasseur/guess_json_mapping_code#readme",
   "devDependencies": {
-    "jest": "^24.0.0"
+    "eslint": "^5.12.1",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^24.0.0",
+    "prettier": "1.16.1"
   }
 }
