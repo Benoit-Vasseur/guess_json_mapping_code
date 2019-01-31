@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint *.js",
-    "format": "prettier --write *.js"
+    "format": "prettier --write *.js",
+    "preversion": "npm run format && npm run lint && npm run test",
+    "publish": "npm publish --access public"
   },
   "repository": {
     "type": "git",
