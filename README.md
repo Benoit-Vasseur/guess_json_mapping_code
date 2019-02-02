@@ -12,7 +12,9 @@ The strating points are the source and the target JSONs and we want to get the c
 The starting points of the library (guessMapingRules()) are two json : a source and a target.
 And the end result is a generated source code that, if run, will produce the json target from the json source .
 
-For example, if the source is :
+Here an example on how the library works : https://repl.it/@Benoit_Vasseur/guessjsonmapping
+And bellow the same example explained :
+So if the source is :
 
 ```json
 {
