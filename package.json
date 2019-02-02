@@ -1,6 +1,6 @@
 {
   "name": "@bvasseur/guess_json_mapping_code",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "library to produce (javascript) code that map two JSON (source -> target).",
   "main": "index.js",
   "scripts": {
