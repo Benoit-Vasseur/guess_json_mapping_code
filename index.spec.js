@@ -4,15 +4,15 @@ describe("guestMapingRules", () => {
   test("simple json", () => {
     const source = {
       p: {
-        firstName: "Benoit"
+        firstname: "Benoit"
       },
-      lastName: "Vasseur"
+      lastname: "Vasseur"
     }
 
     const target = {
       personne: {
-        prenom: "Benoit",
-        nom: "Vasseur"
+        firstName: "Benoit",
+        lastName: "Vasseur"
       }
     }
 
@@ -20,8 +20,8 @@ describe("guestMapingRules", () => {
 
     expect(mappingRules).toEqual({
       personne: {
-        prenom: ".p.firstName",
-        nom: ".lastName"
+        firstName: ".p.firstname",
+        lastName: ".lastname"
       }
     })
   })

@@ -4,33 +4,85 @@
 
 ## GOAL
 
-The goal of this library is to produce (groovy) code to map two JSON (source -> target).
-The strating points are the source and the target JSON and want to get the code to transform the source to the target.
+The goal of this library is to produce (Javascript / groovy) code to map two JSON (source -> target).
+The strating points are the source and the target JSONs and we want to get the code to produce the target from the source.
+
+## Documentation
+
+The starting points of the library (guessMapingRules()) are two json : a source and a target.
+And the end result is a generated source code that, if run, will produce the json target from the json source .
+
+For example, if the source is :
+
+```json
+{
+  "p": {
+    "firstname": "Benoit"
+  },
+  "lastname": "Vasseur"
+}
+```
+
+And the target :
+
+```json
+{
+  "personne": {
+    "firstName": "Benoit",
+    "lastName": "Vasseur"
+  }
+}
+```
+
+The generated (JavaScript) source code is :
+
+```js
+var target = {
+    "personne": {
+        "firstName": source.p.firstname,
+        "lastName": source.lastname
+    }
+}
+```
+
+To generate the source code, there is one intermediate data structure : mappingRules, that represents the mapping target <- source.
+
+```json
+{
+  "personne": {
+    "firstName": ".p.firstname",
+    "lastName": ".lastname"
+  }
+}
+```
 
 ## ROADMAP
 
-The items order in sublists are not meaningful.
+The order of the items in sublists are not meaningful for the priority.
 
 - [x] simple json mapping : no array, strict equal (no substring), ...
 - [x] add tests
-    - [x] guessMapingRules()
-    - [] findPath()
-    - [] generateMappingCode()
+  - [x] guessMapingRules()
+  - [] findPath()
+  - [] generateMappingCode()
 - [x] add CD/CI
 - [x] add linter and prettier
-- [] be sure to have a nice workflow and good tools for publishing, testing and documentation
+- [-] be sure to have a nice workflow and good tools for : 
+    - [x] publishing source
+    - [x] testing
+    - [-] documentation : for now I just use markdown in github but want to test some stuff (generate doc from test -> living documentation, gatsby, jsDoc / typescript, github pages, ...) 
 - [] add UI
-    - [] simple version : no linter for json, no code formatting, etc
-    - [] add beautiffier for json inputs
-    - [] add code formatting for generated code
-    - [] visual mode of the mapping (arrows to represent the mapping, etc)
+  - [] simple version : no linter for json, no code formatting, etc
+  - [] add beautiffier for json inputs
+  - [] add code formatting for generated code
+  - [] visual mode of the mapping (arrows to represent the mapping, etc)
 - add documentation and test cases to support the roadmap
 - [] improve algorithm, to handle
-    - [] arrays
-    - [] substring
-    - [] concat
-    - [] multiple matches
-    - [] date format conversion
+  - [] arrays
+  - [] substring
+  - [] concat
+  - [] multiple matches
+  - [] date format conversion
 - [] open for extension to support other languages
 
 ## workflow and contribution
@@ -38,6 +90,7 @@ The items order in sublists are not meaningful.
 ### Tools
 
 Tools used to have style consistency (and try to check some best practises) :
+
 - prettier : `npm run format`
 - eslint : `npm run lint`
 

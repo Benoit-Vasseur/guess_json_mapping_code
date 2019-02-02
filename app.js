@@ -1,17 +1,16 @@
 const { guessMapingRules, generateMappingCode } = require("./index")
 
 const source = {
-  firstName: "Benoit",
   p: {
-    firstName: "Benoit"
+    firstname: "Benoit"
   },
-  lastName: "Vasseur"
+  lastname: "Vasseur"
 }
 
 const target = {
   personne: {
-    prenom: "Benoit",
-    nom: "Vasseur"
+    firstName: "Benoit",
+    lastName: "Vasseur"
   }
 }
 
