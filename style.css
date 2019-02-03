@@ -1,0 +1,23 @@
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: row;
+}
+
+.input {
+  flex: 1;
+}
+
+#inputs-separator {
+  min-width: 8px;
+}
+
+#generate-button {
+  margin: 14px 0; 
+}

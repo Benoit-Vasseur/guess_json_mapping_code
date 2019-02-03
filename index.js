@@ -35,8 +35,10 @@ target = ${mappingRules
     : sourceCode
 }
 
-module.exports = {
-  guessMapingRules,
-  findPath,
-  generateMappingCode
+if (typeof module !== "undefined") {
+  module.exports = {
+    guessMapingRules,
+    findPath,
+    generateMappingCode
+  }
 }
