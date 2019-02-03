@@ -25,7 +25,7 @@ const mappingRules = guessMapingRules(source, target)
 const formatedMappingRules = JSON.stringify(mappingRules, null, 4)
 console.log(formatedMappingRules)
 
-console.log(generateMappingCode(formatedMappingRules))
+console.log(generateMappingCode(formatedMappingRules, true))
 
 /*
 

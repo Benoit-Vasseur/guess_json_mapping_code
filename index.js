@@ -23,13 +23,16 @@ function findPath(value, source, path = "") {
   return r
 }
 
-function generateMappingCode(mappingRules) {
-  return `
+function generateMappingCode(mappingRules, isGroovy) {
+  let sourceCode = `
 target = ${mappingRules
     .replace(new RegExp('"\\.', "g"), "source.")
     .replace(new RegExp('",', "g"), ",")
     .replace(/"\n/g, "\n")}
     `
+  return isGroovy
+    ? sourceCode.replace(/\{/g, "[").replace(/\}/g, "]")
+    : sourceCode
 }
 
 module.exports = {

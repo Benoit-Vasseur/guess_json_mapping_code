@@ -13,6 +13,7 @@ The starting points of the library (guessMapingRules()) are two json : a source 
 And the end result is a generated source code that, if run, will produce the json target from the json source .
 
 Here an example on how the library works : https://repl.it/@Benoit_Vasseur/guessjsonmapping
+
 And bellow the same example explained :
 So if the source is :
 
@@ -47,6 +48,18 @@ var target = {
 }
 ```
 
+The Groovy code is :
+```groovy
+target = [
+    "personne": [
+        "firstName": source.p.firstname,
+        "lastName": source.lastname
+    ]
+]
+```
+
+And here is a running example that use the generated code : https://jdoodle.com/a/XkJ
+
 To generate the source code, there is one intermediate data structure : mappingRules, that represents the mapping target <- source.
 
 ```json
@@ -63,10 +76,13 @@ To generate the source code, there is one intermediate data structure : mappingR
 The order of the items in sublists are not meaningful for the priority.
 
 - [x] simple json mapping : no array, strict equal (no substring), ...
-- [x] add tests
+- [x] unit tests
   - [x] guessMapingRules()
   - [] findPath()
   - [] generateMappingCode()
+- [-] add integration tests
+  - [x] code generation for Javascript
+  - [] code generation for Groovy
 - [x] add CD/CI
 - [x] add linter and prettier
 - [-] be sure to have a nice workflow and good tools for : 
