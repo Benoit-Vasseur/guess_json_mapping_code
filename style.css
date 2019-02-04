@@ -8,16 +8,34 @@
 .inputs {
   display: flex;
   flex-direction: row;
+  flex-shrink: 0;
 }
 
-.input {
+.side {
   flex: 1;
 }
 
+.side-title {
+  text-align: center;
+  margin: 12px 0;
+}
+
 #inputs-separator {
-  min-width: 8px;
+  min-width: 2px;
+  margin: 0 4px;
+  background-color: gainsboro;
+}
+
+.editor {
+  height: 300px;
 }
 
 #generate-button {
-  margin: 14px 0; 
+  margin: 12px 0;
+  flex-shrink: 0;
+}
+
+.generated-source-code {
+  overflow-y: auto;
+  flex-shrink: 1;
 }

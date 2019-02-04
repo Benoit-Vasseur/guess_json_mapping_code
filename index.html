@@ -1,6 +1,8 @@
 <html>
   <head>
     <link href="./style.css" rel="stylesheet" />
+    <link href="./vendors/jsoneditor.css" rel="stylesheet" type="text/css" />
+    <script src="./vendors/jsoneditor.js"></script>
     <script src="./index.js"></script>
     <script src="./ui-app.js"></script>
     <script src="./vendors/prism.js"></script>
@@ -9,16 +11,25 @@
   <body>
     <div id="app">
       <div class="inputs">
-        <textarea id="source-input" class="input"></textarea>
+        <div class="side">
+          <h2 class="side-title">Source</h2>
+          <div class="editor" id="source-jsoneditor"></div>
+        </div>
+
         <div id="inputs-separator"></div>
-        <textarea id="target-input" class="input"></textarea>
+
+        <div class="side">
+          <h2 class="side-title">Target</h2>
+          <div class="editor" id="target-jsoneditor"></div>
+        </div>
       </div>
 
       <input id="generate-button" type="submit" value="Generate" />
       <div class="generated-source-code">
-          <pre><code class="language-javascript" id="source-code">
-            var a = "titi";
-            var u = "toto";</code></pre>
+        <pre><code class="language-javascript" id="source-code">
+            // click on the generate button
+            // to have the source code to build a target from a source
+          </code></pre>
       </div>
     </div>
   </body>
