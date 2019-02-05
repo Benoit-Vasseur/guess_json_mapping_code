@@ -7,6 +7,12 @@
 The goal of this library is to produce (Javascript / groovy) code to map two JSON (source -> target).
 The strating points are the source and the target JSONs and we want to get the code to produce the target from the source.
 
+## Main use case : data migration
+
+You have two systems A and B and have some duplicated data (at least one).
+So the same data is represented in the two data structures (A and B).
+The library and the UI will help you to write a migration script and the duplicates will be your starting points.
+
 ## Documentation
 
 The starting points of the library (guessMapingRules()) are two json : a source and a target.
