@@ -1,4 +1,7 @@
-const { guessMapingRules, generateMappingCode } = require("./index")
+const {
+  guessMapingRules,
+  generateMappingCode
+} = require("./packages/lib/index")
 
 const source = {
   p: {
@@ -38,20 +41,3 @@ const formatedMappingRules = JSON.stringify(mappingRules, null, 4)
 console.log(formatedMappingRules)
 
 console.log(generateMappingCode(formatedMappingRules, true))
-
-/*
-
-const mappingRulesEx = {
-  personne: {
-    prenom: "$SOURCE.firstName",
-    nom: "$SOURCE.lastName"
-  }
-};
-
-function MappingCode(source) {
-  target = {};
-  target.personne = {};
-  target.personne.prenom = source.firstName;
-  target.personne.nom = source.lastName;
-}
-*/

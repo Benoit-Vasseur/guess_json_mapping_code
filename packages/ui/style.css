@@ -32,7 +32,10 @@
 
 #generate-button {
   margin: 12px 0;
+  padding: 8px;
   flex-shrink: 0;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .generated-source-code {
