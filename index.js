@@ -1,9 +1,10 @@
 function guessMapingRules(source, target, mappingRules = {}) {
   Object.entries(target).forEach(([key, value]) => {
     if (typeof value === "object") {
-      mappingRules[key] = guessMapingRules(source, value, mappingRules[key])
+      mappingRules[key] = {}
+      guessMapingRules(source, value, mappingRules[key])
     } else {
-      return (mappingRules[key] = findPath(value, source))
+      mappingRules[key] = findPath(value, source)
     }
   })
   return mappingRules
@@ -12,6 +13,7 @@ function guessMapingRules(source, target, mappingRules = {}) {
 function findPath(value, source, path = "") {
   let r
   Object.entries(source).forEach(([key, v]) => {
+    if (r) return
     if (typeof v === "object") {
       r = findPath(value, v, `${path}.${key}`)
     } else {
@@ -35,8 +37,10 @@ target = ${mappingRules
     : sourceCode
 }
 
-module.exports = {
-  guessMapingRules,
-  findPath,
-  generateMappingCode
+if (typeof module !== "undefined") {
+  module.exports = {
+    guessMapingRules,
+    findPath,
+    generateMappingCode
+  }
 }
