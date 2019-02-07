@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link href="./style.css" rel="stylesheet" />
+    <link href="./vendors/jsoneditor.css" rel="stylesheet" type="text/css" />
+    <link href="./vendors/prism.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="inputs">
+        <div class="side">
+          <h2 class="side-title">Source</h2>
+          <div class="editor" id="source-jsoneditor"></div>
+        </div>
+
+        <div id="inputs-separator"></div>
+
+        <div class="side">
+          <h2 class="side-title">Target</h2>
+          <div class="editor" id="target-jsoneditor"></div>
+        </div>
+      </div>
+
+      <input id="generate-button" type="submit" value="Generate" />
+      <div class="generated-source-code">
+        <pre><code class="language-javascript" id="source-code">
+            // click on the generate button
+            // to have the source code to build a target from a source
+          </code></pre>
+      </div>
+    </div>
+    <script src="./uiApp.js"></script>
+  </body>
+</html>

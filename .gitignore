@@ -1,3 +1,9 @@
+# parcel
+## dist
+dist/
+## cache directory
+.cache/
+
 # Logs
 logs
 *.log
@@ -59,3 +65,5 @@ typings/
 
 # next.js build output
 .next
+
+.DS_Store

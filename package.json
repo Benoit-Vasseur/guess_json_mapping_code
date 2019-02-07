@@ -2,8 +2,12 @@
   "name": "@bvasseur/guess_json_mapping_code",
   "version": "0.1.0",
   "description": "library to produce (javascript) code that map two JSON (source -> target).",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "start": "node nodeApp",
+    "start-ui": "parcel packages/ui/index.html",
+    "start-ui:dist": "http-server dist/",
+    "build-ui": "parcel build packages/ui/index.html",
     "test": "jest",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
     "lint": "eslint *.js",
@@ -24,6 +28,9 @@
     "url": "https://github.com/Benoit-Vasseur/guess_json_mapping_code/issues"
   },
   "homepage": "https://github.com/Benoit-Vasseur/guess_json_mapping_code#readme",
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
   "devDependencies": {
     "eslint": "^5.12.1",
     "eslint-config-prettier": "^4.0.0",
@@ -33,7 +40,9 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "http-server": "^0.11.1",
     "jest": "^24.0.0",
+    "parcel-bundler": "^1.11.0",
     "prettier": "1.16.1"
   }
 }
