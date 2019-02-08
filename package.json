@@ -8,7 +8,7 @@
     "start-ui": "parcel packages/ui/index.html",
     "start-ui:dist": "http-server dist/",
     "build-ui": "rm -rf dist/ && parcel build packages/ui/index.html",
-    "build-ui:ghpages": "rm -rf dist/ && parcel build packages/ui/index.html --public-url ./guess_json_mapping_code",
+    "build-ui:ghpages": "rm -rf dist/ && parcel build packages/ui/index.html --public-url ./",
     "ghpages": "npm run build-ui:ghpages && rm -rf docs/ && cp -r dist/ docs/", 
     "test": "jest",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
